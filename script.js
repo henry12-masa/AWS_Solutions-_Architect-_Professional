@@ -1,49 +1,35 @@
 const params = new URLSearchParams(location.search);
 
-const exam = params.get("exam") || "ans";
+const exam = params.get("exam") || "sap";
 const type = params.get("type");
 
 const exams = {
-
-  ans: {
-    title: "AWS Advanced Networking Specialty（ANS-C01）",
-    desc: "VPC・Direct Connect・Transit Gateway・DNS・ハイブリッド接続",
+  sap: {
+    title: "AWS Solutions Architect Professional（SAP-C02）",
+    desc: "組織設計・高度なアーキテクチャ・移行・コスト最適化",
     categories: {
-      ansNetworkDesign: "ネットワーク設計",
-      ansHybrid: "ハイブリッド接続",
-      ansSecurity: "ネットワークセキュリティ",
-      ansAutomation: "自動化・運用",
-      ansPractice: "総合演習"
+      sapOrganization: "組織とガバナンス",
+      sapDesign: "高度な設計",
+      sapMigration: "移行・モダナイゼーション",
+      sapCost: "コスト最適化",
+      sapPractice: "総合演習"
     }
   },
 
-  scs: {
-    title: "AWS Certified Security – Specialty（SCS-C02）",
-    desc: "IAM・暗号化・ログ監査・インシデント対応",
+  dop: {
+    title: "AWS DevOps Engineer Professional（DOP-C02）",
+    desc: "CI/CD・構成管理・監視・自動化・信頼性",
     categories: {
-      scsIdentity: "IAM・認証",
-      scsDetection: "検知・監査",
-      scsInfrastructure: "インフラ保護",
-      scsDataProtection: "データ保護",
-      scsPractice: "総合演習"
-    }
-  },
-
-  aif: {
-    title: "AWS Certified AI Practitioner（AIF-C01）",
-    desc: "生成AI・機械学習基礎・責任あるAI・AWS AIサービス",
-    categories: {
-      aifFundamentals: "AI基礎",
-      aifGenerative: "生成AI",
-      aifAwsServices: "AWS AIサービス",
-      aifResponsible: "責任あるAI",
-      aifPractice: "総合演習"
+      dopSdlc: "SDLC自動化",
+      dopConfiguration: "構成管理",
+      dopResilience: "高可用性・復旧",
+      dopMonitoring: "監視・ログ",
+      dopPractice: "総合演習"
     }
   }
-
 };
 
-const currentExam = exams[exam] || exams.ans;
+const currentExam = exams[exam] || exams.sap;
 const currentType = type || "all";
 
 document.title = currentExam.title;
