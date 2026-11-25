@@ -1,6 +1,6 @@
 const params = new URLSearchParams(location.search);
 
-const exam = params.get("exam") || "sap";
+const exam = params.get("exam") || "ans";
 const type = params.get("type");
 
 const exams = {
@@ -43,7 +43,7 @@ const exams = {
 
 };
 
-const currentExam = exams[exam] || exams.sap;
+const currentExam = exams[exam] || exams.ans;
 const currentType = type || "all";
 
 document.title = currentExam.title;
